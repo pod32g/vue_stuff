@@ -6,14 +6,14 @@
         class="list-group-item list-group-item-action flex-column align-items-start list-group-item-warning"
       >
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Mis Cursos</h5>
+          <h5 class="mb-1">Mis cursos</h5>
           <input
             type="text"
             class="form-control col-sm-4"
             v-model="search"
             placeholder="Buscar curso"
           >
-          <button class="btn btn-warning">Nuevo Curso</button>
+          <button v-if="teacher" class="btn btn-warning" v-on:click="openNew">Nuevo Curso</button>
         </div>
       </a>
       <router-link
@@ -44,6 +44,7 @@ export default {
   name: "Courses",
   data() {
     return {
+      teacher: false,
       search: "",
       err_msg: false,
       message: "",
@@ -79,9 +80,15 @@ export default {
           this.err_msg = true;
           console.log(e);
         });
+    },
+    openNew() {
+      this.$modal.show("create-courses");
     }
   },
   created() {
+    if (this.$session.type != 3) {
+      this.teacher = true;
+    }
     this.refresh();
   },
   computed: {
@@ -96,11 +103,7 @@ export default {
 
 <style scoped>
 .list-group {
-  margin-top: 9%;
-}
-.lebutton {
-  margin-top: 9%;
-  margin-right: 0%;
+  margin-top: 7%;
 }
 </style>
 

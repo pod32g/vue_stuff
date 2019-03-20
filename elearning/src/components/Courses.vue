@@ -11,7 +11,7 @@
           v-model="search"
           placeholder="Buscar curso"
         >
-        <button class="btn btn-warning">Nuevo Curso</button>
+        <button v-if="teacher" class="btn btn-warning" v-on:click="openNew">Nuevo Curso</button>
       </div>
     </a>
     <div v-if="err_msg" class="alert alert-danger" role="alert">{{message}}</div>
@@ -39,10 +39,14 @@
 
 <script>
 /* eslint-disable */
+
+import CreateCourseModal from "@/components/CreateCourseModal";
+
 export default {
   name: "Courses",
   data() {
     return {
+      teacher: false,
       search: "",
       err_msg: false,
       message: "",
@@ -64,7 +68,10 @@ export default {
       this.$http
         .get("/courses/get/all/")
         .then(response => {
-          this.courses = response.data.courses;
+          console.log(response.data);
+          if (response.data.courses.length !== 0) {
+            this.courses = response.data.courses;
+          }
         })
         .catch(e => {
           this.message =
@@ -72,9 +79,15 @@ export default {
           this.err_msg = true;
           console.log(e);
         });
+    },
+    openNew() {
+      this.$modal.show("create-courses");
     }
   },
   created() {
+    if (this.$session.type != 3) {
+      this.teacher = true;
+    }
     this.refresh();
   },
   computed: {
@@ -89,7 +102,7 @@ export default {
 
 <style scoped>
 .list-group {
-  margin-top: 8%;
+  margin-top: 7%;
 }
 </style>
 

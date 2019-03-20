@@ -4,7 +4,7 @@
       <div class="container">
         <div class="intro-text">
           <div class="intro-lead-in">¡Bienvenido a E-Learning a tu medida!</div>
-          <div class="intro-heading text-uppercase">Tú nueva solucion de aprendizaje digital</div>
+          <div class="intro-heading text-uppercase">Tú nueva solución de aprendizaje digital</div>
         </div>
       </div>
     </header>

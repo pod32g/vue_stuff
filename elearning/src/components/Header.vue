@@ -68,11 +68,6 @@ export default {
             page: "/miscursos"
           },
           {
-            id: 2,
-            text: "Tareas",
-            page: "/tareas"
-          },
-          {
             id: 3,
             text: "Cerrar sesión",
             page: "/logout"

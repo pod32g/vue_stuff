@@ -8,7 +8,7 @@ import BootstrapVue from 'bootstrap-vue'
 import VueCookies from 'vue-cookies'
 import VModal from 'vue-js-modal'
 
-Vue.use(VModal, { dialog: true })
+Vue.use(VModal, { dialog: true, dynamic: true })
 Vue.use(VueCookies)
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false

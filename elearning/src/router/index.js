@@ -2,6 +2,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
+import Signup from '@/components/Signup'
 import Login from '@/components/Login'
 import Logout from '@/components/Logout'
 import Courses from '@/components/Courses'
@@ -21,6 +22,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: Signup
     },
     {
       path: '/logout',

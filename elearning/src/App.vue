@@ -34,7 +34,12 @@
       <Header/>
     </slot>
     <router-view/>
+    <CreateCourseModal/>
+    <CreatePostModal/>
+    <EditCourseModal/>
     <v-dialog/>
+    <modals-container/>
+
     <slot name="footer">
       <Footer/>
     </slot>
@@ -45,12 +50,18 @@
 /* eslint-disable */
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CreateCourseModal from "@/components/CreateCourseModal";
+import EditCourseModal from "@/components/EditCourseModal";
+import CreatePostModal from "@/components/CreatePostModal";
 
 export default {
   name: "App",
   components: {
     Header,
-    Footer
+    Footer,
+    CreateCourseModal,
+    EditCourseModal,
+    CreatePostModal
   }
 };
 </script>

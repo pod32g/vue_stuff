@@ -19,9 +19,6 @@
         <div class="form-group">
           <input type="submit" class="btnSubmit" value="Iniciar Sesión">
         </div>
-        <div class="form-group">
-          <a href="#" class="ForgetPwd">Forget Password?</a>
-        </div>
       </form>
     </div>
   </div>
