@@ -14,7 +14,7 @@ Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
 const base = axios.create({
-  baseURL: 'http://localhost:8000'
+  baseURL: 'https://api.elearningatumedida.info'
 })
 
 Vue.prototype.$cookies = VueCookies

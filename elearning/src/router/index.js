@@ -47,6 +47,9 @@ export default new Router({
       path: '/miscursos',
       name: 'MisCursos',
       component: MyCourses
+    },
+    {
+      path: '*',
     }
   ]
 })
